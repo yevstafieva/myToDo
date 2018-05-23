@@ -3,12 +3,16 @@ import AddItem from './components/AddItem';
 import ToDoList from './components/ToDoList';
 import logo from './logo.svg';
 import './App.css';
+import './Popup.css'
 import PropTypes from 'prop-types'
+import NewPopup from './components/NewPopup'
+import Popup from 'react-popup'
 
 class App extends React.Component {
 
   render() {
     return (
+      <React.Fragment>
       <div>
         <div className="App">
           <header className="App-header">
@@ -20,8 +24,10 @@ class App extends React.Component {
           <AddItem />
           <ToDoList />
         </div>
-
       </div>
+      <Popup />
+      <NewPopup />
+      </React.Fragment>
     );
   }
 }

@@ -14,6 +14,7 @@ class RToDoList extends Component {
        key={todo.id}
        deleteItem={this.props.deleteItem}
        changeChecked={this.props.changeChecked}
+       popupShowItem={this.props.popupShowItem}
      />
   ) : [];
 
@@ -46,7 +47,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         deleteItem: (id) => dispatch({type:"DELETE_TODO", id: id}),
-        changeChecked: (id) => dispatch({type:"TODO_CHECKED", id: id})
+        changeChecked: (id) => dispatch({type:"TODO_CHECKED", id: id}),
+        popupShowItem: (description) => dispatch({type:"OPEN_TODO_POPUP", description: description})
     };
 };
 
