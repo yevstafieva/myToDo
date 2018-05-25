@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ToDoItem from './ToDoItem'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-
+import { Row, Col} from 'react-bootstrap'
 
 class RToDoList extends Component {
 
@@ -19,12 +19,13 @@ class RToDoList extends Component {
   ) : [];
 
     return (
-      <div>
+      <React.Fragment>
+      <Row>  <Col xs={12} md={12}>
         <p> Total elements : {len}</p>
-        <ul>
-          {todoHTML}
-        </ul>
-      </div>
+      </Col></Row>
+        {todoHTML}
+      </React.Fragment>
+
     )
   }
 

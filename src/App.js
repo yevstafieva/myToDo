@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 import NewPopup from './components/NewPopup'
 import Popup from 'react-popup'
 import "bootstrap/dist/css/bootstrap.css";
-
+import { Grid } from "react-bootstrap"
 class App extends React.Component {
 
   render() {
@@ -21,10 +21,10 @@ class App extends React.Component {
             <h1 className="App-title">Welcome to React</h1>
           </header>
         </div>
-        <div>
+        <Grid className="show-grid">
           <AddItem />
           <ToDoList />
-        </div>
+        </Grid>
       </div>
       <Popup />
       <NewPopup />

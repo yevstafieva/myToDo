@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import {Form, Col, FormGroup, FormControl, Button, Row} from 'react-bootstrap'
 
 class RAddItem extends Component {
   constructor (props){
@@ -15,10 +16,17 @@ class RAddItem extends Component {
   }
   render () {
     return (
-      <div>
-        <input id="addNewToDoItem" type="text" placeholder="add new item" />
-        <button onClick={this.onClick}>Add</button>
-      </div>
+      <Row><Col  xs={12} md={12}>
+      <Form inline>
+      <FormGroup inline>
+        <FormControl id="addNewToDoItem"
+            type="text"
+            placeholder="Add new item"
+          />
+        <Button onClick={this.onClick}>Add</Button>
+      </FormGroup>
+    </Form>
+  </Col></Row>
     )
   }
 }
