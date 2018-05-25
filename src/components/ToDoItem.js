@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
+import { Button, Row, Grid, Col, ButtonToolbar, Checkbox } from "react-bootstrap"
 
 class ToDoItem extends React.Component {
 
@@ -35,15 +35,22 @@ class ToDoItem extends React.Component {
 
   render () {
     return (
-      <div>
-        <label>
-        <input id={"toDoItemCheckbox"+this.props.todo.id} type="checkbox" onClick={this.onClick} defaultChecked={this.props.todo.checked} />
-        <span className={this.props.todo.checked?"item-checked":"item-not-checked"}>{this.props.todo.description}</span>
-        </label>
-        <a href="#" onClick={this.showItem}>Show</a>
-        <a href="#" onClick={this.deleteClick}>Delete</a>
-
-      </div>
+      <Grid className="show-grid">
+        <Row>
+          <Col xs={12} md={8}>
+              <label>
+              <input id={"toDoItemCheckbox"+this.props.todo.id} type="checkbox" onClick={this.onClick} defaultChecked={this.props.todo.checked} />
+              <span className={this.props.todo.checked?"item-checked":"item-not-checked"}>{this.props.todo.description}</span>
+              </label>
+          </Col>
+          <Col>
+            <ButtonToolbar>
+              <Button onClick={this.showItem}>Show</Button>
+              <Button onClick={this.deleteClick}>Delete</Button>
+            </ButtonToolbar>
+          </Col>
+        </Row>
+      </Grid>
     )
   }
 

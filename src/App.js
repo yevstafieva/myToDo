@@ -7,6 +7,7 @@ import './Popup.css'
 import PropTypes from 'prop-types'
 import NewPopup from './components/NewPopup'
 import Popup from 'react-popup'
+import "bootstrap/dist/css/bootstrap.css";
 
 class App extends React.Component {
 
