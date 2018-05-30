@@ -1,6 +1,7 @@
 import React from 'react';
 import AddItem from './components/AddItem';
 import ToDoList from './components/ToDoList';
+import TodoItemPage from './components/TodoItemPage'
 import logo from './logo.svg';
 import './App.css';
 import './Popup.css'
@@ -8,7 +9,9 @@ import PropTypes from 'prop-types'
 import NewPopup from './components/NewPopup'
 import Popup from 'react-popup'
 import "bootstrap/dist/css/bootstrap.css";
-import { Grid } from "react-bootstrap"
+import { Grid} from "react-bootstrap"
+import { Route, Switch } from "react-router-dom"
+
 class App extends React.Component {
 
   render() {
@@ -21,10 +24,12 @@ class App extends React.Component {
             <h1 className="App-title">Welcome to React</h1>
           </header>
         </div>
-        <Grid className="show-grid">
-          <AddItem />
-          <ToDoList />
-        </Grid>
+
+        <Switch>
+          <Route exact path="/" component={ToDoList} />
+          <Route exact path="/todo/:id" component={TodoItemPage} />
+        </Switch>
+
       </div>
       <Popup />
       <NewPopup />

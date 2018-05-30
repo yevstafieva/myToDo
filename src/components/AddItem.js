@@ -17,8 +17,8 @@ class RAddItem extends Component {
   render () {
     return (
       <Row><Col  xs={12} md={12}>
-      <Form inline>
-      <FormGroup inline>
+      <Form inline={true}>
+      <FormGroup inline="true">
         <FormControl id="addNewToDoItem"
             type="text"
             placeholder="Add new item"

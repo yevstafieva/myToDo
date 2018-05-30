@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import ToDoItem from './ToDoItem'
+import AddItem from './AddItem'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { Row, Col} from 'react-bootstrap'
+import { Grid, Row, Col} from 'react-bootstrap'
 
 class RToDoList extends Component {
 
@@ -20,10 +21,16 @@ class RToDoList extends Component {
 
     return (
       <React.Fragment>
-      <Row>  <Col xs={12} md={12}>
-        <p> Total elements : {len}</p>
-      </Col></Row>
-        {todoHTML}
+
+        <Grid className="show-grid">
+          <AddItem />
+
+          <Row>
+            <Col xs={12} md={12}>Total elements : {len}</Col>
+          </Row>
+          {todoHTML}
+        </Grid>
+
       </React.Fragment>
 
     )

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {Button, Row, Grid, Col, ButtonToolbar, Checkbox } from "react-bootstrap"
+import {Link} from "react-router-dom"
 
 class ToDoItem extends React.Component {
 
@@ -44,7 +45,7 @@ class ToDoItem extends React.Component {
           </Col>
           <Col>
             <ButtonToolbar>
-              <Button onClick={this.showItem}>Show</Button>
+              <Link to={"/todo/"+this.props.todo.id} className="btn btn-default" >Show</Link>
               <Button onClick={this.deleteClick}>Delete</Button>
             </ButtonToolbar>
           </Col>
